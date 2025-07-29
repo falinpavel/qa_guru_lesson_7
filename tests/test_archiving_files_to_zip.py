@@ -22,7 +22,7 @@ def test_check_existing_files_in_zip():
         assert 'example.xlsx' in archive.namelist()
 
 
-def test_read_pdf_file():
+def test_read_pdf_file_from_zip():
     with ZipFile(f"{TMP_DIR}/my_homework.zip", mode="r") as archive:
         assert 'example.pdf' in archive.namelist()
         pdf_stream = BytesIO(archive.read('example.pdf'))
@@ -30,7 +30,7 @@ def test_read_pdf_file():
         assert len(pdf_file.pages) == 1
 
 
-def test_read_csv_file():
+def test_read_csv_file_from_zip():
     with ZipFile(f"{TMP_DIR}/my_homework.zip", mode="r") as archive:
         assert 'example.csv' in archive.namelist()
         csv_stream = BytesIO(archive.read('example.csv'))
@@ -39,7 +39,7 @@ def test_read_csv_file():
         assert csv_file.shape == (24, 6)
 
 
-def test_read_xlsx_file():
+def test_read_xlsx_file_from_zip():
     with ZipFile(f"{TMP_DIR}/my_homework.zip", mode="r") as archive:
         assert 'example.xlsx' in archive.namelist()
         xlsx_stream = BytesIO(archive.read('example.xlsx'))
