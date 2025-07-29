@@ -1,8 +1,7 @@
 import os
-
 import requests
-from selene import browser, query
 
+from selene import browser, query
 from const import TMP_DIR
 
 

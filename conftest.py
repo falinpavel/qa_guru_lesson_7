@@ -1,7 +1,7 @@
 import pytest
+
 from selene.support.shared import browser
 from selenium import webdriver
-
 from const import TMP_DIR
 
 

@@ -1,9 +1,10 @@
 import os
+import pandas as pd
+
 from zipfile import ZipFile
 from pypdf import PdfReader
 from io import BytesIO
 from const import TMP_DIR
-import pandas as pd
 
 
 def test_archiving_files_to_zip():
