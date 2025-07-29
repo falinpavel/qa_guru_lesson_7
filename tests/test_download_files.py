@@ -11,7 +11,7 @@ def test_download_file_pdf():
     download_url = browser.element('[title="Скачать example.pdf"]').get(query.attribute("href"))
     content = requests.get(url=download_url).content
     assert content is not None
-    with open(TMP_DIR + '/example.pdf', 'wb') as file:
+    with open(f"{TMP_DIR}/example.pdf", 'wb') as file:
         file.write(content)
         assert os.path.exists(TMP_DIR + '/example.pdf')
 
@@ -21,7 +21,7 @@ def test_download_file_xlsx():
     download_url = browser.element('[title="Скачать example.xlsx"]').get(query.attribute("href"))
     content = requests.get(url=download_url).content
     assert content is not None
-    with open(TMP_DIR + '/example.xlsx', 'wb') as file:
+    with open(f"{TMP_DIR}/example.xlsx", 'wb') as file:
         file.write(content)
         assert os.path.exists(TMP_DIR + '/example.xlsx')
 
@@ -31,6 +31,6 @@ def test_download_file_csv():
     download_url = browser.element('[title="Скачать example.csv"]').get(query.attribute("href"))
     content = requests.get(url=download_url).content
     assert content is not None
-    with open(TMP_DIR + '/example.csv', 'wb') as file:
+    with open(f"{TMP_DIR}/example.csv", 'wb') as file:
         file.write(content)
         assert os.path.exists(TMP_DIR + '/example.csv')
