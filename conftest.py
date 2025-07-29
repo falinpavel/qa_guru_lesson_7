@@ -16,7 +16,7 @@ def driver_configuration():
     }
     options.add_experimental_option('prefs', prefs)
     driver = webdriver.Chrome(options=options)
-    browser.config.driver = driver
     browser.config.base_url = 'https://www.online-convert.com/ru'
+    browser.config.driver = driver
     yield
     browser.quit()
