@@ -13,7 +13,7 @@ def test_download_file_pdf():
     assert content is not None
     with open(f"{TMP_DIR}/example.pdf", 'wb') as file:
         file.write(content)
-        assert os.path.exists(TMP_DIR + '/example.pdf')
+        assert os.path.exists(f"{TMP_DIR}/example.pdf")
 
 
 def test_download_file_xlsx():
@@ -23,7 +23,7 @@ def test_download_file_xlsx():
     assert content is not None
     with open(f"{TMP_DIR}/example.xlsx", 'wb') as file:
         file.write(content)
-        assert os.path.exists(TMP_DIR + '/example.xlsx')
+        assert os.path.exists(f"{TMP_DIR}/example.xlsx")
 
 
 def test_download_file_csv():
@@ -33,4 +33,4 @@ def test_download_file_csv():
     assert content is not None
     with open(f"{TMP_DIR}/example.csv", 'wb') as file:
         file.write(content)
-        assert os.path.exists(TMP_DIR + '/example.csv')
+        assert os.path.exists(f"{TMP_DIR}/example.csv")
