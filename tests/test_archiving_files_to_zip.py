@@ -28,10 +28,12 @@ def test_read_pdf_file_from_zip():
         pdf_file = PdfReader(pdf_stream)
         assert isinstance(pdf_file, PdfReader)
         assert pdf_file.pdf_header == "%PDF-1.5"
+        assert pdf_file.is_encrypted == False
         assert len(pdf_file.pages) == 1
         assert 'Document file type: PDF' in pdf_file.get_page(0).extract_text()
         assert 'Purpose: Provide example of this file type' in pdf_file.get_page(0).extract_text()
         assert 'File created by http://www.online-convert.com' in pdf_file.get_page(0).extract_text()
+        assert pdf_file.is_encrypted == False
 
 
 def test_read_csv_file_from_zip():
